@@ -1,0 +1,16 @@
+<div *ngIf="entidad == 'bird'">
+    <form action="">
+        <div>
+            <label for="">Nombre</label>
+            <input name="name" type="text" [(ngModel)]="name">
+        </div>
+        <div>
+            <label for="">Nombre cientifico</label>
+            <input name="cientifico" type="text" [(ngModel)]="cientificName">
+        </div>
+        <div>
+            <button (click)="guardarBird()">Guardar</button>
+        </div>
+    </form>
+
+</div>

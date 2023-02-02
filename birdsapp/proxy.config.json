@@ -1,0 +1,12 @@
+{
+    "/api/*": {
+        "target": "*",
+        "secure": false,
+        "logLevel": "info"
+    },
+	"/myotherapp/*": {
+        "target": "*",
+        "secure": false,
+        "logLevel": "info"
+    }
+}
