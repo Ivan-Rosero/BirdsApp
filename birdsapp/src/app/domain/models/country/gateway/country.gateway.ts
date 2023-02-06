@@ -11,5 +11,5 @@ export abstract class CountryGateway {
     
     abstract findAllCountries(): Observable<Array<ICountryModel>>;
 
-    abstract deleteCountry(id: number): Observable<boolean>;
+    abstract deleteCountry(id: number): Observable<any>;
 }

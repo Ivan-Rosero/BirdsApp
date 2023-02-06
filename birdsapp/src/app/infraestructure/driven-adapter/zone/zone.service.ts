@@ -10,10 +10,15 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 })
 
 export class ZoneService extends ZoneGateway {
+  private httpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+  });
 
-  private httpHeaders = new HttpHeaders({ "Content-Type": "application/json" })
+  //private httpHeaders = new HttpHeaders({ "Content-Type": "application/json" })
 
-  API: string = "localhost:8087/bird";
+  API: string = "http://localhost:8087/zone";
 
   constructor(public http: HttpClient) {
     super();
@@ -33,8 +38,8 @@ export class ZoneService extends ZoneGateway {
       headers: this.httpHeaders
     })
   }
-  deleteZone(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.API}/{id}`, {
+  deleteZone(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.API}/${id}`, {
       headers: this.httpHeaders
     })
   }

@@ -11,5 +11,5 @@ export abstract class BirdGateway {
     
     abstract findAllBirds(): Observable<Array<IBirdModel>>;
 
-    abstract deleteBird( id: number): Observable<boolean>;
+    abstract deleteBird( id: number): Observable<any>;
 }

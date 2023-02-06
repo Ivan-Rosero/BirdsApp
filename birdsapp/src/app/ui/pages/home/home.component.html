@@ -1,6 +1,6 @@
 <app-navbar (newItemEvent)="addItem($event)"></app-navbar>
 
-<select name="" [(ngModel)]="tipo">
+<select [(ngModel)]="tipo">
     <option value="bird">Ave</option>
     <option value="country">País</option>
     <option value="zona">Zona</option>
@@ -8,4 +8,16 @@
 
 <div *ngIf="opcion == 'agregar' ">
     <app-guardar [entidad]="tipo"></app-guardar>
+</div>
+
+<div *ngIf="opcion == 'eliminar' ">
+    <app-eliminar [entidad]="tipo"></app-eliminar>
+</div>
+
+<div *ngIf="opcion == 'listar' ">
+    <app-lista [entidad]="tipo"></app-lista>
+</div>
+
+<div *ngIf="opcion == 'actualizar' ">
+    <app-actualizar [entidad]="tipo"></app-actualizar>
 </div>

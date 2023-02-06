@@ -41,7 +41,7 @@ export class BirdUseCase {
             )
         }
 
-        deleteBird(id: number): Observable<boolean | null>{
+        deleteBird(id: number): Observable<any | null>{
             return this.birdGateway.deleteBird(id).pipe(
                 catchError(() => {
                     return of(null);

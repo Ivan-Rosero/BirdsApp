@@ -10,10 +10,15 @@ import { HttpHeaders, HttpClient } from '@angular/common/http'
 })
 
 export class BirdService extends BirdGateway {
+  private httpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+  });
 
-  private httpHeaders = new HttpHeaders( {"Contetn-Type" : "application/json"})
+  //private httpHeaders = new HttpHeaders( {"Contetn-Type" : "application/json"})
 
-  API: string = "localhost:8087/bird";
+  API: string = "http://localhost:8087/bird";
 
   constructor(public http: HttpClient) {
     super();
@@ -33,11 +38,9 @@ export class BirdService extends BirdGateway {
       headers: this.httpHeaders
     })
   }
-  deleteBird( id: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.API}/{id}`, {
+  deleteBird( id: number): Observable<any> {
+    return this.http.delete<any>(`${this.API}/${id}`, {
       headers: this.httpHeaders
     })
-  }
-
-  
+  } 
 }

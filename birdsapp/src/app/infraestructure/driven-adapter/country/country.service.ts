@@ -10,10 +10,15 @@ import { ICountryRequest } from '../country/country.model';
 })
 
 export class CountryService extends CountryGateway {
+  private httpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+  });
 
-  private httpHeaders = new HttpHeaders({ "Contetn-Type": "application/json" })
+  //private httpHeaders = new HttpHeaders({ "Contetn-Type": "application/json" })
 
-  API: string = "localhost:8087/bird";
+  API: string = "http://localhost:8087/country";
 
   constructor(public http: HttpClient) {
     super();
@@ -33,8 +38,8 @@ export class CountryService extends CountryGateway {
       headers: this.httpHeaders
     })
   }
-  deleteCountry(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.API}/{id}`, {
+  deleteCountry(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.API}/${id}`, {
       headers: this.httpHeaders
     })
   }

@@ -41,7 +41,7 @@ export class CountryUseCase {
             )
         }
 
-        deleteCountry(id: number): Observable<boolean | null>{
+        deleteCountry(id: number): Observable<any | null>{
             return this.countryGateway.deleteCountry(id).pipe(
                 catchError(() => {
                     return of(null);

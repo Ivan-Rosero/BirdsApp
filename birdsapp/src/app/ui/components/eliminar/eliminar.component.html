@@ -1,1 +1,25 @@
-<p>eliminar works!</p>
+<div *ngIf="entidad == 'bird'">
+    <form action="">
+        <div>
+            <label for="">Id</label>
+            <input name="id" type="number" [(ngModel)]="id">
+        </div>
+        <div>
+            <button (click)="deleteBird()">Eliminar</button>
+        </div>
+    </form>
+
+</div>
+
+<div *ngIf="entidad == 'zona'">
+    <form action="">
+        <div>
+            <label for="">Id</label>
+            <input name="id" type="number" [(ngModel)]="id">
+        </div>
+        <div>
+            <button (click)="deleteZone()">Eliminar</button>
+        </div>
+    </form>
+
+</div>

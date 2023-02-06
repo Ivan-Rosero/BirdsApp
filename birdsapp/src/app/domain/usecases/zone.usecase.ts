@@ -41,7 +41,7 @@ export class ZoneUseCase {
             )
         }
 
-        deleteBird(id: number): Observable<boolean | null>{
+        deleteZone(id: number): Observable<any | null>{
             return this.zoneGateway.deleteZone(id).pipe(
                 catchError(() => {
                     return of(null);

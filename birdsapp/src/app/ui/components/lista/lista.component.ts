@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BirdUseCase } from 'src/app/domain/usecases/bird.usecase';
+import { CountryUseCase } from 'src/app/domain/usecases/country.usecase';
+import { ZoneUseCase } from 'src/app/domain/usecases/zone.usecase';
 
 @Component({
   selector: 'app-lista',
@@ -6,10 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista.component.css']
 })
 export class ListaComponent implements OnInit {
+  @Input() entidad: string = "";
+  birdList : any;
+  zoneList: any;
 
-  constructor() { }
+  constructor(private birdUseCase: BirdUseCase, private countryUseCase: CountryUseCase,  private zoneUseCase: ZoneUseCase, ) { }
 
   ngOnInit(): void {
+    this.birdUseCase.findAllBirds().subscribe(
+      result => { this.birdList = result;
+
+        
+      }
+    )
+
+    this.zoneUseCase.findAllZones().subscribe(
+      result => { this.zoneList = result;
+
+        
+      }
+    )
   }
+
 
 }

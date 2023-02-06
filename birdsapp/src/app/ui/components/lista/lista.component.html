@@ -1,1 +1,39 @@
-<p>lista works!</p>
+<div *ngIf="entidad == 'bird'">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Common Name</th>
+                <th>Scientific Name </th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let bird of birdList">
+            <tr>
+                <td>{{bird.id}}</td>
+                <td>{{bird.commonName}}</td>
+                <td>{{bird.scientificName}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<div *ngIf="entidad == 'zona'">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Zone Name</th>
+                
+            </tr>
+        </thead>
+        <tbody *ngFor="let zone of zoneList">
+            <tr>
+                <td>{{zone.id}}</td>
+                <td>{{zone.zoneName}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

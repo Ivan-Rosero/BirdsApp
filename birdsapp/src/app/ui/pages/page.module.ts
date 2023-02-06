@@ -10,6 +10,7 @@ import { ComponentsModule } from '../components/components.module';
 import { DomainModule } from 'src/app/domain/domain.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     CommonModule,
     ComponentsModule,
     DomainModule,
-    HttpClientModule
+    HttpClientModule, 
+    FormsModule
   ],
   providers: [
     {provide: BirdGateway, useClass: BirdService},

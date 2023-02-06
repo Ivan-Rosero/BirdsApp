@@ -12,5 +12,5 @@ export abstract class ZoneGateway {
     
     abstract findAllZones(): Observable<Array<IZoneModel>>;
 
-    abstract deleteZone(id: number): Observable<boolean>;
+    abstract deleteZone(id: number): Observable<any>;
 }

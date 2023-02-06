@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { ActualizarComponent } from './actualizar/actualizar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { GuardarComponent } from './guardar/guardar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,7 +20,8 @@ import { GuardarComponent } from './guardar/guardar.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [NavbarComponent, ListaComponent, ActualizarComponent, EliminarComponent, GuardarComponent]
 })

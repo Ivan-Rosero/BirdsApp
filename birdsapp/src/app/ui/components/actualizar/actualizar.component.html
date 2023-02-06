@@ -1,1 +1,44 @@
-<p>actualizar works!</p>
+<div *ngIf="entidad == 'bird'">
+    <form action="">
+        <div>
+            <label for="">Id</label>
+            <br>
+            <input name="id" type="text" [(ngModel)]="id">
+            <br>
+        </div>
+        <div>
+            <label for="">Nombre</label>
+            <br>
+            <input name="name" type="text" [(ngModel)]="birdName">
+        </div>
+        <div>
+            <label for="">Nombre cientifico</label>
+            <br>
+            <input name="cientifico" type="text" [(ngModel)]="cientificName">
+        </div>
+        <div>
+            <button (click)="actualizarBird()">Actualizar</button>
+        </div>
+    </form>
+
+</div>
+
+<div *ngIf="entidad == 'zona'">
+    <form action="">
+        <div>
+            <label for="">Id</label>
+            <br>
+            <input name="id" type="text" [(ngModel)]="id">
+            <br>
+        </div>
+        <div>
+            <label for="">Nombre Zona</label>
+            <br>
+            <input name="name" type="text" [(ngModel)]="zoneName">
+        </div>
+        <div>
+            <button (click)="actualizarZone()">Actualizar</button>
+        </div>
+    </form>
+
+</div>
